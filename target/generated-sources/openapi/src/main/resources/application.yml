@@ -1,0 +1,18 @@
+
+micronaut:
+  application:
+    name: openapi-micronaut
+  server:
+    port: 8080
+    context-path: "/renda-fixa-banking/api/"
+  security:
+    # authentication: bearer | cookie | session | idtoken
+
+jackson:
+  serialization:
+    writeEnumsUsingToString: true
+    writeDatesAsTimestamps: false
+  deserialization:
+    readEnumsUsingToString: true
+    failOnUnknownProperties: false
+    failOnInvalidSubtype: false

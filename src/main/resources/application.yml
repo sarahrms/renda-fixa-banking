@@ -1,0 +1,19 @@
+micronaut:
+  application:
+    name: renda-fixa-banking
+    server:
+      port: 8080
+  router:
+    static-resources:
+      swagger:
+        paths: classpath:META-INF/swagger
+        mapping: /swagger/**
+
+endpoints:
+  routes:
+    sensitive: false
+
+netty:
+  default:
+    allocator:
+      max-order: 3

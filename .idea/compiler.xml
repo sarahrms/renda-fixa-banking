@@ -2,20 +2,21 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
-      <profile name="Annotation profile for default" enabled="true">
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Annotation profile for renda-fixa-banking" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <option name="micronaut.processing.group" value="example.micronaut" />
         <option name="micronaut.processing.module" value="default" />
         <processorPath useClasspath="false">
-          <entry name="$MAVEN_REPOSITORY$/io/micronaut/micronaut-inject-java/4.1.6/micronaut-inject-java-4.1.6.jar" />
-          <entry name="$MAVEN_REPOSITORY$/org/slf4j/slf4j-api/2.0.9/slf4j-api-2.0.9.jar" />
-          <entry name="$MAVEN_REPOSITORY$/io/micronaut/micronaut-core-processor/4.1.6/micronaut-core-processor-4.1.6.jar" />
-          <entry name="$MAVEN_REPOSITORY$/io/micronaut/micronaut-inject/4.1.3/micronaut-inject-4.1.3.jar" />
+          <entry name="$MAVEN_REPOSITORY$/io/micronaut/micronaut-http-validation/4.1.2/micronaut-http-validation-4.1.2.jar" />
+          <entry name="$MAVEN_REPOSITORY$/org/slf4j/slf4j-api/2.0.7/slf4j-api-2.0.7.jar" />
+          <entry name="$MAVEN_REPOSITORY$/io/micronaut/micronaut-core-processor/4.1.2/micronaut-core-processor-4.1.2.jar" />
+          <entry name="$MAVEN_REPOSITORY$/io/micronaut/micronaut-inject/4.1.5/micronaut-inject-4.1.5.jar" />
           <entry name="$MAVEN_REPOSITORY$/jakarta/inject/jakarta.inject-api/2.0.1/jakarta.inject-api-2.0.1.jar" />
           <entry name="$MAVEN_REPOSITORY$/jakarta/annotation/jakarta.annotation-api/2.1.1/jakarta.annotation-api-2.1.1.jar" />
-          <entry name="$MAVEN_REPOSITORY$/io/micronaut/micronaut-core/4.1.3/micronaut-core-4.1.3.jar" />
+          <entry name="$MAVEN_REPOSITORY$/io/micronaut/micronaut-core/4.1.5/micronaut-core-4.1.5.jar" />
           <entry name="$MAVEN_REPOSITORY$/io/micronaut/micronaut-aop/4.1.6/micronaut-aop-4.1.6.jar" />
           <entry name="$MAVEN_REPOSITORY$/org/ow2/asm/asm-tree/9.5/asm-tree-9.5.jar" />
           <entry name="$MAVEN_REPOSITORY$/org/ow2/asm/asm/9.5/asm-9.5.jar" />
@@ -24,22 +25,42 @@
           <entry name="$MAVEN_REPOSITORY$/com/github/javaparser/javaparser-core/3.25.5/javaparser-core-3.25.5.jar" />
           <entry name="$MAVEN_REPOSITORY$/io/micronaut/micronaut-core-reactive/4.1.6/micronaut-core-reactive-4.1.6.jar" />
           <entry name="$MAVEN_REPOSITORY$/org/reactivestreams/reactive-streams/1.0.4/reactive-streams-1.0.4.jar" />
+          <entry name="$MAVEN_REPOSITORY$/io/micronaut/micronaut-http-server/4.1.2/micronaut-http-server-4.1.2.jar" />
+          <entry name="$MAVEN_REPOSITORY$/io/micronaut/micronaut-http/4.1.2/micronaut-http-4.1.2.jar" />
+          <entry name="$MAVEN_REPOSITORY$/io/micronaut/micronaut-context/4.1.3/micronaut-context-4.1.3.jar" />
+          <entry name="$MAVEN_REPOSITORY$/io/micronaut/micronaut-context-propagation/4.1.2/micronaut-context-propagation-4.1.2.jar" />
+          <entry name="$MAVEN_REPOSITORY$/io/projectreactor/reactor-core/3.5.9/reactor-core-3.5.9.jar" />
+          <entry name="$MAVEN_REPOSITORY$/io/micronaut/micronaut-router/4.1.2/micronaut-router-4.1.2.jar" />
+          <entry name="$MAVEN_REPOSITORY$/io/micronaut/micronaut-websocket/4.1.2/micronaut-websocket-4.1.2.jar" />
+          <entry name="$MAVEN_REPOSITORY$/io/micronaut/micronaut-http-client-core/4.1.2/micronaut-http-client-core-4.1.2.jar" />
+          <entry name="$MAVEN_REPOSITORY$/io/micronaut/micronaut-json-core/4.1.3/micronaut-json-core-4.1.3.jar" />
+          <entry name="$MAVEN_REPOSITORY$/io/micronaut/micronaut-discovery-core/4.1.2/micronaut-discovery-core-4.1.2.jar" />
+          <entry name="$MAVEN_REPOSITORY$/io/micronaut/micronaut-inject-java/4.1.6/micronaut-inject-java-4.1.6.jar" />
+          <entry name="$MAVEN_REPOSITORY$/io/micronaut/data/micronaut-data-processor/4.1.3/micronaut-data-processor-4.1.3.jar" />
+          <entry name="$MAVEN_REPOSITORY$/io/micronaut/data/micronaut-data-model/4.1.3/micronaut-data-model-4.1.3.jar" />
+          <entry name="$MAVEN_REPOSITORY$/jakarta/persistence/jakarta.persistence-api/3.1.0/jakarta.persistence-api-3.1.0.jar" />
+          <entry name="$MAVEN_REPOSITORY$/io/micronaut/micronaut-graal/4.1.6/micronaut-graal-4.1.6.jar" />
+          <entry name="$MAVEN_REPOSITORY$/io/micronaut/security/micronaut-security-annotations/4.1.0/micronaut-security-annotations-4.1.0.jar" />
           <entry name="$MAVEN_REPOSITORY$/io/micronaut/serde/micronaut-serde-processor/2.2.4/micronaut-serde-processor-2.2.4.jar" />
           <entry name="$MAVEN_REPOSITORY$/io/micronaut/serde/micronaut-serde-api/2.2.4/micronaut-serde-api-2.2.4.jar" />
-          <entry name="$MAVEN_REPOSITORY$/io/micronaut/micronaut-context/4.1.3/micronaut-context-4.1.3.jar" />
-          <entry name="$MAVEN_REPOSITORY$/io/micronaut/micronaut-json-core/4.1.3/micronaut-json-core-4.1.3.jar" />
-          <entry name="$MAVEN_REPOSITORY$/io/micronaut/micronaut-http/4.1.3/micronaut-http-4.1.3.jar" />
-          <entry name="$MAVEN_REPOSITORY$/io/micronaut/micronaut-context-propagation/4.1.3/micronaut-context-propagation-4.1.3.jar" />
-          <entry name="$MAVEN_REPOSITORY$/io/projectreactor/reactor-core/3.5.9/reactor-core-3.5.9.jar" />
-          <entry name="$MAVEN_REPOSITORY$/io/micronaut/configuration/micronaut-openapi/4.1.2/micronaut-openapi-4.1.2.jar" />
+          <entry name="$MAVEN_REPOSITORY$/io/micronaut/validation/micronaut-validation-processor/4.0.3/micronaut-validation-processor-4.0.3.jar" />
+          <entry name="$MAVEN_REPOSITORY$/io/micronaut/validation/micronaut-validation/4.0.3/micronaut-validation-4.0.3.jar" />
+          <entry name="$MAVEN_REPOSITORY$/jakarta/validation/jakarta.validation-api/3.0.2/jakarta.validation-api-3.0.2.jar" />
+          <entry name="$MAVEN_REPOSITORY$/io/micronaut/reactor/micronaut-reactor/3.0.2/micronaut-reactor-3.0.2.jar" />
         </processorPath>
-        <module name="default" />
+        <module name="renda-fixa-banking" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="default" target="11" />
+      <module name="micronaut-app-demo" target="11" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="default" options="-parameters -Amicronaut.processing.group=example.micronaut -Amicronaut.processing.module=default" />
+      <module name="default" options="-parameters -Amicronaut.processing.group=com.selimhorri -Amicronaut.processing.module=micronaut-app-demo" />
+      <module name="micronaut-app-demo" options="-parameters -Amicronaut.processing.group=com.selimhorri -Amicronaut.processing.module=micronaut-app-demo" />
+      <module name="renda-fixa-banking" options="-parameters -Amicronaut.processing.group=example.micronaut -Amicronaut.processing.module=default" />
     </option>
   </component>
 </project>

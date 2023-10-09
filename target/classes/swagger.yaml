@@ -1,0 +1,62 @@
+openapi: 3.0.3
+info:
+  title: API de Renda Fixa
+  description: Uma API para listar aplicações e produtos Renda Fixa.
+  version: 1.0.0
+
+servers:
+  - url: /renda-fixa-banking/api
+
+tags:
+  - name: Aplicações
+    description: Aplicações de Renda Fixa
+
+paths:
+  /aplicacoes/{contaCorrente}:
+    get:
+      summary: Lista de Aplicações
+      description: Retorna uma lista de aplicações.
+      operationId: listarAplicacoes
+      tags:
+        - aplicacoes
+      parameters:
+        - in: path
+          name: contaCorrente
+          description: Conta Corrente do cliente
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Sucesso
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AplicacaoResponseList"
+        400:
+          description: Solicitação inválida
+
+components:
+  schemas:
+    AplicacaoResponse:
+      type: object
+      properties:
+        id:
+          type: integer
+          description: O ID da aplicação.
+        valor:
+          type: number
+          format: double
+          description: O valor da aplicação.
+        data:
+          type: string
+          format: date
+          description: A data da aplicação.
+
+    AplicacaoResponseList:
+      type: object
+      properties:
+        list:
+          type: array
+          items:
+            $ref: "#/components/schemas/AplicacaoResponse"
