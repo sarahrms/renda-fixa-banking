@@ -1,6 +1,6 @@
 openapi: 3.0.3
 info:
-  title: API de Renda Fixa
+  title: API Renda Fixa Banking
   description: Uma API para listar aplicações e produtos Renda Fixa.
   version: 1.0.0
 

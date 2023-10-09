@@ -1,5 +1,5 @@
 /*
- * API de Renda Fixa
+ * API Renda Fixa Banking
  * Uma API para listar aplicações e produtos Renda Fixa.
  *
  * The version of the OpenAPI document: 1.0.0
