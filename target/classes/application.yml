@@ -7,11 +7,12 @@ micronaut:
     static-resources:
       swagger:
         paths: classpath:META-INF/swagger
-        mapping: /renda-fixa-banking/api/**
+        mapping: /swagger/**
 
 endpoints:
   routes:
     sensitive: false
+
 netty:
   default:
     allocator:

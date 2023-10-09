@@ -5,7 +5,7 @@ import micronaut.api.AplicacoesApi;
 import micronaut.model.AplicacaoResponseList;
 import rendafixa.service.AplicacoesService;
 
-@Controller
+@Controller("renda-fixa-banking/api")
 public class AplicacoesApiController implements AplicacoesApi {
 
     private final AplicacoesService aplicacoesService;
