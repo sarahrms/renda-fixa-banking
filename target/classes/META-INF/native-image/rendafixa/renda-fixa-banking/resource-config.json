@@ -8,7 +8,13 @@
   }, {
     "pattern" : "\\Qlogback.xml\\E"
   }, {
+    "pattern" : "\\QMETA-INF/micronaut/io.micronaut.core.beans.BeanIntrospectionReference/rendafixa.model.$AplicacaoResponseAplicacoesInner$IntrospectionRef\\E"
+  }, {
     "pattern" : "\\QMETA-INF/micronaut/io.micronaut.core.beans.BeanIntrospectionReference/micronaut.model.$AplicacaoResponse$IntrospectionRef\\E"
+  }, {
+    "pattern" : "\\QMETA-INF/micronaut/io.micronaut.core.beans.BeanIntrospectionReference/rendafixa.model.$ConsultaAplicacaoResponse$IntrospectionRef\\E"
+  }, {
+    "pattern" : "\\QMETA-INF/micronaut/io.micronaut.core.beans.BeanIntrospectionReference/rendafixa.model.$ConsultaAplicacaoResponseList$IntrospectionRef\\E"
   }, {
     "pattern" : "\\Qswagger.yaml\\E"
   }, {

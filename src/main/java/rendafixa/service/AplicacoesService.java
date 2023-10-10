@@ -33,9 +33,8 @@ public class AplicacoesService {
             HttpResponse<ConsultaAplicacaoResponseList> response = httpClient.exchange(request, ConsultaAplicacaoResponseList.class);
 
             if (response.status().equals(HttpStatus.OK)) {
-                return response.body().getList();
+                return converter(response.body().getList());
             }
-
         } catch (Exception ex) {
             throw new HttpServerException(ex.getMessage());
         }
