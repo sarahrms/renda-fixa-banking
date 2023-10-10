@@ -1,24 +1,18 @@
 package rendafixa.model;
 
-import java.util.Objects;
-import java.util.Arrays;
-import java.util.Map;
-import java.util.stream.Collectors;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import io.micronaut.core.annotation.Introspected;
+import io.micronaut.serde.annotation.Serdeable;
+import io.swagger.v3.oas.annotations.media.Schema;
+import jakarta.annotation.Generated;
+import micronaut.invoker.annotation.HardNullable;
+
 import java.util.ArrayList;
 import java.util.List;
-import com.fasterxml.jackson.annotation.*;
-import io.micronaut.serde.annotation.Serdeable;
-import jakarta.validation.constraints.*;
-import jakarta.validation.Valid;
-import io.micronaut.core.annotation.Introspected;
-import micronaut.invoker.annotation.HardNullable;
-import jakarta.annotation.Generated;
-import io.swagger.v3.oas.annotations.media.Schema;
-import rendafixa.model.AplicacaoResponseAplicacoesInner;
+import java.util.Objects;
 
-/**
- * AplicacaoResponse
- */
 @Serdeable
 @JsonPropertyOrder({
         ConsultaAplicacaoResponse.JSON_PROPERTY_CODIGO_PRODUTO,
@@ -44,13 +38,14 @@ public class ConsultaAplicacaoResponse {
     @Schema(name = "aplicacoes", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
     @JsonProperty(JSON_PROPERTY_APLICACOES)
     @JsonInclude(JsonInclude.Include.USE_DEFAULTS)
-    private List<AplicacaoResponseAplicacoesInner> aplicacoes;
+    private List<ConsultaAplicacaoResponseAplicacoesInner> aplicacoes;
 
     public ConsultaAplicacaoResponse() {
     }
 
     /**
      * O código do produto aplicado.
+     *
      * @return the codigoProduto property value
      */
     public String getCodigoProduto() {
@@ -66,6 +61,7 @@ public class ConsultaAplicacaoResponse {
 
     /**
      * Set codigoProduto in a chainable fashion.
+     *
      * @return The same instance of AplicacaoResponse for chaining.
      */
     public ConsultaAplicacaoResponse codigoProduto(String codigoProduto) {
@@ -76,31 +72,33 @@ public class ConsultaAplicacaoResponse {
     /**
      * @return the aplicacoes property value
      */
-    public List<AplicacaoResponseAplicacoesInner> getAplicacoes() {
+    public List<ConsultaAplicacaoResponseAplicacoesInner> getAplicacoes() {
         return aplicacoes;
     }
 
     /**
      * Set the aplicacoes property value
      */
-    public void setAplicacoes(List<AplicacaoResponseAplicacoesInner> aplicacoes) {
+    public void setAplicacoes(List<ConsultaAplicacaoResponseAplicacoesInner> aplicacoes) {
         this.aplicacoes = aplicacoes;
     }
 
     /**
      * Set aplicacoes in a chainable fashion.
+     *
      * @return The same instance of AplicacaoResponse for chaining.
      */
-    public ConsultaAplicacaoResponse aplicacoes(List<AplicacaoResponseAplicacoesInner> aplicacoes) {
+    public ConsultaAplicacaoResponse aplicacoes(List<ConsultaAplicacaoResponseAplicacoesInner> aplicacoes) {
         this.aplicacoes = aplicacoes;
         return this;
     }
 
     /**
      * Add an item to the aplicacoes property in a chainable fashion.
+     *
      * @return The same instance of AplicacaoResponse for chaining.
      */
-    public ConsultaAplicacaoResponse addAplicacoesItem(AplicacaoResponseAplicacoesInner aplicacoesItem) {
+    public ConsultaAplicacaoResponse addAplicacoesItem(ConsultaAplicacaoResponseAplicacoesInner aplicacoesItem) {
         if (this.aplicacoes == null) {
             this.aplicacoes = new ArrayList<>();
         }

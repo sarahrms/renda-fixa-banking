@@ -15,7 +15,9 @@ import java.util.Objects;
 import java.util.Arrays;
 import java.util.Map;
 import java.util.stream.Collectors;
-import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+import micronaut.model.AplicacaoResponseAplicacoesInner;
 import com.fasterxml.jackson.annotation.*;
 import io.micronaut.serde.annotation.Serdeable;
 import jakarta.validation.constraints.*;
@@ -30,117 +32,160 @@ import io.swagger.v3.oas.annotations.media.Schema;
  */
 @Serdeable
 @JsonPropertyOrder({
-    AplicacaoResponse.JSON_PROPERTY_ID,
-    AplicacaoResponse.JSON_PROPERTY_VALOR,
-    AplicacaoResponse.JSON_PROPERTY_DATA
+    AplicacaoResponse.JSON_PROPERTY_CODIGO_PRODUTO,
+    AplicacaoResponse.JSON_PROPERTY_NOME_PRODUTO,
+    AplicacaoResponse.JSON_PROPERTY_TIPO_PRODUTO,
+    AplicacaoResponse.JSON_PROPERTY_APLICACOES
 })
 @Generated(value = "io.micronaut.openapi.generator.JavaMicronautServerCodegen")
 @Introspected
 public class AplicacaoResponse {
 
-    public static final String JSON_PROPERTY_ID = "id";
-    public static final String JSON_PROPERTY_VALOR = "valor";
-    public static final String JSON_PROPERTY_DATA = "data";
+    public static final String JSON_PROPERTY_CODIGO_PRODUTO = "codigoProduto";
+    public static final String JSON_PROPERTY_NOME_PRODUTO = "nomeProduto";
+    public static final String JSON_PROPERTY_TIPO_PRODUTO = "tipoProduto";
+    public static final String JSON_PROPERTY_APLICACOES = "aplicacoes";
 
     /**
-     * O ID da aplicação.
+     * O código do produto aplicado.
      */
     @HardNullable
-    @Schema(name = "id", description = "O ID da aplicação.", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
-    @JsonProperty(JSON_PROPERTY_ID)
+    @Schema(name = "codigoProduto", description = "O código do produto aplicado.", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+    @JsonProperty(JSON_PROPERTY_CODIGO_PRODUTO)
     @JsonInclude(JsonInclude.Include.USE_DEFAULTS)
-    private Integer id;
+    private String codigoProduto;
 
     /**
-     * O valor da aplicação.
+     * O nome do produto aplicado.
      */
     @HardNullable
-    @Schema(name = "valor", description = "O valor da aplicação.", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
-    @JsonProperty(JSON_PROPERTY_VALOR)
+    @Schema(name = "nomeProduto", description = "O nome do produto aplicado.", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+    @JsonProperty(JSON_PROPERTY_NOME_PRODUTO)
     @JsonInclude(JsonInclude.Include.USE_DEFAULTS)
-    private Double valor;
+    private String nomeProduto;
 
     /**
-     * A data da aplicação.
+     * O tipo do produto aplicado.
      */
     @HardNullable
-    @Schema(name = "data", description = "A data da aplicação.", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
-    @JsonProperty(JSON_PROPERTY_DATA)
+    @Schema(name = "tipoProduto", description = "O tipo do produto aplicado.", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+    @JsonProperty(JSON_PROPERTY_TIPO_PRODUTO)
     @JsonInclude(JsonInclude.Include.USE_DEFAULTS)
-    private LocalDate data;
+    private String tipoProduto;
+
+    @HardNullable
+    @Schema(name = "aplicacoes", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+    @JsonProperty(JSON_PROPERTY_APLICACOES)
+    @JsonInclude(JsonInclude.Include.USE_DEFAULTS)
+    private List<AplicacaoResponseAplicacoesInner> aplicacoes;
 
     public AplicacaoResponse() {
     }
 
     /**
-     * O ID da aplicação.
-     * @return the id property value
+     * O código do produto aplicado.
+     * @return the codigoProduto property value
      */
-    public Integer getId() {
-        return id;
+    public String getCodigoProduto() {
+        return codigoProduto;
     }
 
     /**
-     * Set the id property value
+     * Set the codigoProduto property value
      */
-    public void setId(Integer id) {
-        this.id = id;
+    public void setCodigoProduto(String codigoProduto) {
+        this.codigoProduto = codigoProduto;
     }
 
     /**
-     * Set id in a chainable fashion.
+     * Set codigoProduto in a chainable fashion.
      * @return The same instance of AplicacaoResponse for chaining.
      */
-    public AplicacaoResponse id(Integer id) {
-        this.id = id;
+    public AplicacaoResponse codigoProduto(String codigoProduto) {
+        this.codigoProduto = codigoProduto;
         return this;
     }
 
     /**
-     * O valor da aplicação.
-     * @return the valor property value
+     * O nome do produto aplicado.
+     * @return the nomeProduto property value
      */
-    public Double getValor() {
-        return valor;
+    public String getNomeProduto() {
+        return nomeProduto;
     }
 
     /**
-     * Set the valor property value
+     * Set the nomeProduto property value
      */
-    public void setValor(Double valor) {
-        this.valor = valor;
+    public void setNomeProduto(String nomeProduto) {
+        this.nomeProduto = nomeProduto;
     }
 
     /**
-     * Set valor in a chainable fashion.
+     * Set nomeProduto in a chainable fashion.
      * @return The same instance of AplicacaoResponse for chaining.
      */
-    public AplicacaoResponse valor(Double valor) {
-        this.valor = valor;
+    public AplicacaoResponse nomeProduto(String nomeProduto) {
+        this.nomeProduto = nomeProduto;
         return this;
     }
 
     /**
-     * A data da aplicação.
-     * @return the data property value
+     * O tipo do produto aplicado.
+     * @return the tipoProduto property value
      */
-    public LocalDate getData() {
-        return data;
+    public String getTipoProduto() {
+        return tipoProduto;
     }
 
     /**
-     * Set the data property value
+     * Set the tipoProduto property value
      */
-    public void setData(LocalDate data) {
-        this.data = data;
+    public void setTipoProduto(String tipoProduto) {
+        this.tipoProduto = tipoProduto;
     }
 
     /**
-     * Set data in a chainable fashion.
+     * Set tipoProduto in a chainable fashion.
      * @return The same instance of AplicacaoResponse for chaining.
      */
-    public AplicacaoResponse data(LocalDate data) {
-        this.data = data;
+    public AplicacaoResponse tipoProduto(String tipoProduto) {
+        this.tipoProduto = tipoProduto;
+        return this;
+    }
+
+    /**
+     * @return the aplicacoes property value
+     */
+    public List<AplicacaoResponseAplicacoesInner> getAplicacoes() {
+        return aplicacoes;
+    }
+
+    /**
+     * Set the aplicacoes property value
+     */
+    public void setAplicacoes(List<AplicacaoResponseAplicacoesInner> aplicacoes) {
+        this.aplicacoes = aplicacoes;
+    }
+
+    /**
+     * Set aplicacoes in a chainable fashion.
+     * @return The same instance of AplicacaoResponse for chaining.
+     */
+    public AplicacaoResponse aplicacoes(List<AplicacaoResponseAplicacoesInner> aplicacoes) {
+        this.aplicacoes = aplicacoes;
+        return this;
+    }
+
+    /**
+     * Add an item to the aplicacoes property in a chainable fashion.
+     * @return The same instance of AplicacaoResponse for chaining.
+     */
+    public AplicacaoResponse addAplicacoesItem(AplicacaoResponseAplicacoesInner aplicacoesItem) {
+        if (this.aplicacoes == null) {
+            this.aplicacoes = new ArrayList<>();
+        }
+        this.aplicacoes.add(aplicacoesItem);
         return this;
     }
 
@@ -153,22 +198,24 @@ public class AplicacaoResponse {
             return false;
         }
         AplicacaoResponse aplicacaoResponse = (AplicacaoResponse) o;
-        return Objects.equals(this.id, aplicacaoResponse.id) &&
-            Objects.equals(this.valor, aplicacaoResponse.valor) &&
-            Objects.equals(this.data, aplicacaoResponse.data);
+        return Objects.equals(this.codigoProduto, aplicacaoResponse.codigoProduto) &&
+            Objects.equals(this.nomeProduto, aplicacaoResponse.nomeProduto) &&
+            Objects.equals(this.tipoProduto, aplicacaoResponse.tipoProduto) &&
+            Objects.equals(this.aplicacoes, aplicacaoResponse.aplicacoes);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, valor, data);
+        return Objects.hash(codigoProduto, nomeProduto, tipoProduto, aplicacoes);
     }
 
     @Override
     public String toString() {
         return "AplicacaoResponse("
-            + "id: " + getId() + ", "
-            + "valor: " + getValor() + ", "
-            + "data: " + getData()
+            + "codigoProduto: " + getCodigoProduto() + ", "
+            + "nomeProduto: " + getNomeProduto() + ", "
+            + "tipoProduto: " + getTipoProduto() + ", "
+            + "aplicacoes: " + getAplicacoes()
             + ")";
     }
 

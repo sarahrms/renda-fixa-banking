@@ -1,20 +1,18 @@
 package rendafixa.model;
 
-import java.util.Objects;
-import java.util.Arrays;
-import java.util.Map;
-import java.util.stream.Collectors;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import io.micronaut.core.annotation.Introspected;
+import io.micronaut.serde.annotation.Serdeable;
+import io.swagger.v3.oas.annotations.media.Schema;
+import jakarta.annotation.Generated;
+import micronaut.invoker.annotation.HardNullable;
+import micronaut.model.AplicacaoResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import micronaut.model.AplicacaoResponse;
-import com.fasterxml.jackson.annotation.*;
-import io.micronaut.serde.annotation.Serdeable;
-import jakarta.validation.constraints.*;
-import jakarta.validation.Valid;
-import io.micronaut.core.annotation.Introspected;
-import micronaut.invoker.annotation.HardNullable;
-import jakarta.annotation.Generated;
-import io.swagger.v3.oas.annotations.media.Schema;
+import java.util.Objects;
 
 @Serdeable
 @JsonPropertyOrder({
@@ -30,7 +28,7 @@ public class ConsultaAplicacaoResponseList {
     @Schema(name = "list", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
     @JsonProperty(JSON_PROPERTY_LIST)
     @JsonInclude(JsonInclude.Include.USE_DEFAULTS)
-    private List<AplicacaoResponse> _list;
+    private List<ConsultaAplicacaoResponse> _list;
 
     public ConsultaAplicacaoResponseList() {
     }
@@ -38,31 +36,33 @@ public class ConsultaAplicacaoResponseList {
     /**
      * @return the _list property value
      */
-    public List<AplicacaoResponse> getList() {
+    public List<ConsultaAplicacaoResponse> getList() {
         return _list;
     }
 
     /**
      * Set the _list property value
      */
-    public void setList(List<AplicacaoResponse> _list) {
+    public void setList(List<ConsultaAplicacaoResponse> _list) {
         this._list = _list;
     }
 
     /**
      * Set _list in a chainable fashion.
+     *
      * @return The same instance of AplicacaoResponseList for chaining.
      */
-    public ConsultaAplicacaoResponseList _list(List<AplicacaoResponse> _list) {
+    public ConsultaAplicacaoResponseList _list(List<ConsultaAplicacaoResponse> _list) {
         this._list = _list;
         return this;
     }
 
     /**
      * Add an item to the _list property in a chainable fashion.
+     *
      * @return The same instance of AplicacaoResponseList for chaining.
      */
-    public ConsultaAplicacaoResponseList addListItem(AplicacaoResponse _listItem) {
+    public ConsultaAplicacaoResponseList addListItem(ConsultaAplicacaoResponse _listItem) {
         if (this._list == null) {
             this._list = new ArrayList<>();
         }

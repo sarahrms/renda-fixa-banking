@@ -9,10 +9,12 @@ import io.micronaut.http.server.exceptions.HttpServerException;
 import io.micronaut.http.uri.UriBuilder;
 import jakarta.inject.Singleton;
 import micronaut.model.AplicacaoResponse;
+import micronaut.model.AplicacaoResponseAplicacoesInner;
 import rendafixa.model.ConsultaAplicacaoResponseList;
 
 import java.net.URI;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import static rendafixa.AppConstants.CONSULTA_APLICACOES_ENDPOINT;
 
@@ -33,7 +35,7 @@ public class AplicacoesService {
             HttpResponse<ConsultaAplicacaoResponseList> response = httpClient.exchange(request, ConsultaAplicacaoResponseList.class);
 
             if (response.status().equals(HttpStatus.OK)) {
-                return converter(response.body().getList());
+                return converterResponse(response.body());
             }
         } catch (Exception ex) {
             throw new HttpServerException(ex.getMessage());
@@ -43,5 +45,26 @@ public class AplicacoesService {
 
     private URI getEndpoint(String contaCorrente) {
         return UriBuilder.of(CONSULTA_APLICACOES_ENDPOINT).path(contaCorrente).build();
+    }
+
+    private List<AplicacaoResponse> converterResponse(ConsultaAplicacaoResponseList consultaAplicacaoResponseList) {
+        return consultaAplicacaoResponseList.getList().stream()
+                .map(consultaAplicacaoResponse -> {
+                    AplicacaoResponse aplicacaoResponse = new AplicacaoResponse();
+                    aplicacaoResponse.setCodigoProduto(consultaAplicacaoResponse.getCodigoProduto());
+                    aplicacaoResponse.setAplicacoes(
+                            consultaAplicacaoResponse.getAplicacoes()
+                                    .stream()
+                                    .map(consultaAplicacaoResponseAplicacoesInner -> {
+                                        AplicacaoResponseAplicacoesInner aplicacaoResponseAplicacoesInner = new AplicacaoResponseAplicacoesInner();
+                                        aplicacaoResponseAplicacoesInner.setData(consultaAplicacaoResponseAplicacoesInner.getData());
+                                        aplicacaoResponseAplicacoesInner.setValor(consultaAplicacaoResponseAplicacoesInner.getValor());
+
+                                        return aplicacaoResponseAplicacoesInner;
+                                    })
+                                    .collect(Collectors.toList()));
+                    return aplicacaoResponse;
+                })
+                .collect(Collectors.toList());
     }
 }
