@@ -117,7 +117,7 @@ public class ConsultaAplicacaoResponseAplicacoesInner {
 
     @Override
     public String toString() {
-        return "AplicacaoResponseAplicacoesInner("
+        return "ConsultaAplicacaoResponseAplicacoesInner("
                 + "valor: " + getValor() + ", "
                 + "data: " + getData()
                 + ")";
