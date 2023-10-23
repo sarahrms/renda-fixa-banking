@@ -27,7 +27,6 @@ public class AplicacoesService {
         this.httpClient = httpClient.toBlocking();
     }
 
-
     public List<AplicacaoResponse> listarAplicacoes(String contaCorrente) {
         try {
             HttpRequest request = HttpRequest.GET(getEndpoint(contaCorrente));
@@ -35,6 +34,7 @@ public class AplicacoesService {
             HttpResponse<ConsultaAplicacaoResponseList> response = httpClient.exchange(request, ConsultaAplicacaoResponseList.class);
 
             if (response.status().equals(HttpStatus.OK)) {
+                httpClient.close();
                 return converterResponse(response.body());
             }
         } catch (Exception ex) {

@@ -2,18 +2,22 @@ micronaut:
   application:
     name: renda-fixa-banking
     server:
-      port: 8080
-  router:
-    static-resources:
-      swagger:
-        paths: classpath:META-INF/swagger
-        mapping: /swagger/**
+      port: 8081
+  endpoints:
+    routes:
+      sensitive: false
+  netty:
+    default:
+      allocator:
+        max-order: 30
+  http:
+    client:
+      connect-timeout: 10s
+      num-of-threads: 200
+      pool:
+        enabled: true
+        max-connections: 200
 
-endpoints:
-  routes:
-    sensitive: false
-
-netty:
-  default:
-    allocator:
-      max-order: 3
+io:
+  netty:
+    event-loop-threads: 200

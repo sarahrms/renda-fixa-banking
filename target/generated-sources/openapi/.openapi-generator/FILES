@@ -1,3 +1,4 @@
+.openapi-generator-ignore
 src/main/java/micronaut/api/AplicacoesApi.java
 src/main/java/micronaut/invoker/annotation/HardNullable.java
 src/main/java/micronaut/invoker/annotation/HardNullable.java

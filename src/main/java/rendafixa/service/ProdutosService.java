@@ -30,6 +30,7 @@ public class ProdutosService {
             HttpRequest request = HttpRequest.GET(getEndpoint());
             HttpResponse<ConsultaProdutoResponseList> response = httpClient.exchange(request, ConsultaProdutoResponseList.class);
             if (response.status().equals(HttpStatus.OK)) {
+                httpClient.close();
                 return response.body().getList();
             }
         } catch (Exception ex) {
